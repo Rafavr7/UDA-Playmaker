@@ -1,0 +1,5 @@
+pt\rafavr\udaplaymaker\controller\TempTableController.class
+pt\rafavr\udaplaymaker\database\model\TempTable.class
+pt\rafavr\udaplaymaker\database\dao\TempTableDAO.class
+pt\rafavr\udaplaymaker\UdaApplication.class
+pt\rafavr\udaplaymaker\repository\TempTableRepository.class
