@@ -32,6 +32,7 @@ public class BaseEntity implements Serializable {
 	@Column(name = "last_modified_date")
 	private Instant lastModifiedDate = Instant.now();
 	
+	
 	public BaseEntity() {}
 
 	public String getCreatedBy() {

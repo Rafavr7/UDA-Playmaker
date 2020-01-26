@@ -15,7 +15,7 @@ import javax.persistence.UniqueConstraint;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Entity
-@Table(name = "contatos_atletas",
+@Table(name = "Contatos_Atletas",
 		uniqueConstraints = @UniqueConstraint(columnNames = {"atleta_id", "relacao_atleta"})
 )
 @EntityListeners(AuditingEntityListener.class)
@@ -46,6 +46,7 @@ public class ContatoAtletaVO extends BaseEntity {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "atleta_id", nullable = false)
 	private AtletaVO atleta;
+	
 	
 	public ContatoAtletaVO() {}
 

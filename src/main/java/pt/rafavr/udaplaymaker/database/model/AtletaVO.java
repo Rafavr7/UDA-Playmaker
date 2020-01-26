@@ -1,7 +1,10 @@
 package pt.rafavr.udaplaymaker.database.model;
 
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
@@ -10,6 +13,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -60,6 +64,10 @@ public class AtletaVO extends BaseEntity {
 	@Column(name = "pais_nascimento", length = 50)
 	private String paisNascimento;
 	
+	@OneToMany(mappedBy = "atleta", cascade = CascadeType.ALL, orphanRemoval = true)
+	private Set<ContatoAtletaVO> contatos = new HashSet<>();
+	
+	
 	public AtletaVO() {}
 
 	public int getAtletaId() {
@@ -101,6 +109,10 @@ public class AtletaVO extends BaseEntity {
 	public String getPaisNascimento() {
 		return paisNascimento;
 	}
+	
+	public Set<ContatoAtletaVO> getContatos() {
+		return contatos;
+	}
 
 	public void setAtletaId(int atletaId) {
 		this.atletaId = atletaId;
@@ -140,6 +152,10 @@ public class AtletaVO extends BaseEntity {
 
 	public void setPaisNascimento(String paisNascimento) {
 		this.paisNascimento = paisNascimento;
+	}
+	
+	public void setContatos(Set<ContatoAtletaVO> contatos) {
+		this.contatos = contatos;
 	}
 	
 }
